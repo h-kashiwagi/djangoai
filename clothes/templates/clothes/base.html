@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   {% load static %}
+   {% load bootstrap4 %}
+   {% bootstrap_css %}　<!--これがないとタグが適用されない -->
+   <link rel="stylesheet" type="text/css" href="{% static 'clothes/css/style.css' %}">
+   {% bootstrap_javascript jquery='full' %}
+   <title>洋服の判定| {% block title %}{% endblock %}</title>
+</head>
+<body>
+   <nav class="navbar navbar-expand-md navbar-light bg-light">
+       <a class="navbar-brand" href="#">AI機能</a>
+   </nav>
+   <div class="container">
+       {% block content %}{% endblock %}
+   </div>
+</body>
+</html>
