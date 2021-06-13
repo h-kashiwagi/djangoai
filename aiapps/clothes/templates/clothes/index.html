@@ -8,14 +8,14 @@
     <form action="{% url 'clothes:predict' %}" method="post" class="form" enctype="multipart/form-data"><!--actionはボタンを押した際に発生する-->
     {% csrf_token %}　
     <div class="form-group">
-     <div class="custom-file">
-      {{ form.image }} <!--contextでviews.pyから送られてくるデータの中からimageの値を取得してこちらの中に埋め込む-->
-      <label class="custom-file-label" for="customFile">
-          ファイルを選択してください
-      </label>
-     </div>
+     　<div class="custom-file">
+      　　{{ form.image }} <!--contextでviews.pyから送られてくるデータの中からimageの値を取得してこちらの中に埋め込む-->
+      　　<label class="custom-file-label" for="customFile">
+         　 ファイルを選択してください
+     　 　</label>
+     　</div>
     </div> 
-     <button type="submit" class="btn btn-primary">推定する！</button>
+     <button type="submit" class="btn btn-primary">推定する！</button> <!--action="{% url 'clothes:predict' %}"が行われる-->
     </form>
 </div>
 {% endblock %}
