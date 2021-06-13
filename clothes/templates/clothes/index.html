@@ -1,0 +1,21 @@
+{% extends 'clothes/base.html' %} <!--base.htmlの拡張 -->
+{% block title %}洋服推定アプリ{% endblock %} 
+    
+{% block content %}
+<div>
+    <h4 class="mt-4 mb-5 border-bottom">洋服推定</h4>
+    <span>画像ファイルを選択して推定ボタンをクリックしてください</span>
+    <form action="{% url 'clothes:predict' %}" method="post" class="form" enctype="multipart/form-data"><!--actionはボタンを押した際に発生する-->
+    {% csrf_token %}　
+    <div class="form-group">
+     <div class="custom-file">
+      {{ form.image }} <!--contextでviews.pyから送られてくるデータの中からimageの値を取得してこちらの中に埋め込む-->
+      <label class="custom-file-label" for="customFile">
+          ファイルを選択してください
+      </label>
+     </div>
+    </div> 
+     <button type="submit" class="btn btn-primary">推定する！</button>
+    </form>
+</div>
+{% endblock %}
