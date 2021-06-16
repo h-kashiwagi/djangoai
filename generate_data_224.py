@@ -8,7 +8,8 @@ import numpy as np
 from sklearn import model_selection 
 
 #パラメーターの初期化
-classes = ["apples","clothes"]  #リストを作成
+classes = ["apples","clothes"]
+#classes = ["car","motorbike"]  #リストを作成
 num_classes = len(classes) 
 image_size = 224 #変更した箇所
 
